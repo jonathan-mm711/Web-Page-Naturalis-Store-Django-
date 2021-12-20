@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+</head>
+<body>
+    {% include "encabezado.html" %}
+    <br>
+    <form action="/confirmar/" method="GET">
+    <table>
+        <div class="container col-lg-12">
+            <div class="row">
+                    <div class="form-group">
+                        <h2 class="h2" for="">Ingrese Numero de Despacho a Confirmar</h2>
+                        <input type="text" placeholder="Escriba el Numero del Despacho Aqui" class="form-control" name="txt_numero_despacho" id="txt_numero_despacho" required>
+                    </div>
+                    
+        </div>
+        <br>
+        <input type="submit" class="btn btn-success" value="Confirmar">
+    </table>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    {% include "footer.html" %}
+</body>
+</html>

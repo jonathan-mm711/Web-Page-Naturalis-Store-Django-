@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'app_despacho/css/estilos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cbf68546a3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="conteiner"> 
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="{% static 'app_despacho/img/head_1.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="{% static 'app_despacho/img/head_2.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'app_despacho/img/head_3.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="h2_2" id="h2_2">
+      <h2>Productos destacados</h2>
+      <div class="row justify-content-center">
+      <div class="linea col-4" id="linea"></div>
+      </div>
+      <h3 class="frase">Para una buena vida, buenos productos!</h3>
+      
+
+    </div>
+    <div class="row justify-content-center">
+      <div class="producto">
+        <img class="prod" src="{% static 'app_despacho/img/miel_500.jpg' %}" alt="">
+        <div class="info">
+          <p class="titulo">Miel natural</p>
+          <p class="descripcion">Miel de abeja 100% natural directa del sur de chile a tu hogar.</p>
+        </div>
+
+      </div>
+      <div class="producto">
+        <img class="prod" src="{% static 'app_despacho/img/mani_japo.jpg' %}" alt="">
+        <div class="info">
+          <p class="titulo">Mani japones</p>
+          <p class="descripcion">Maní japonés natural a granel envasado en potes reutilizables cero plástico.</p>
+        </div>
+
+      </div>
+      <div class="producto">
+        <img class="prod" src="{% static 'app_despacho/img/almendras.png' %}" alt="">
+        <div class="info">
+          <p class="titulo">Almendras</p>
+          <p class="descripcion">Almendras de temporada, cultivadas en nuestros campos. Ricas e ideales para compartir o comer como snack.</p>
+        </div>
+
+      </div>
+
+    </div>
+     
+  </div>
+
+      
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+
+</html>

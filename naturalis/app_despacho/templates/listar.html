@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    
+</head>
+<body>
+    {% include "encabezado.html" %}
+    <h2 class="h2">Despacho buscado es:{{query}}</h2>
+
+
+    <table class="table">
+        <thead>
+            {% if despachos %}
+            {% for despa in despachos %}
+          <tr>
+            <th scope="col">Numero Despacho</th>
+            <th scope="col">Nombre Cliente</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Producto</th>
+          </tr>
+          <tr>
+            <th scope="row">{{ despa.numero_despacho  }}</th>
+            <td>{{ despa.nombre_cliente }}</td>
+            <td>{{ despa.direccion }}</td>
+            <td>{{ despa.telefono }}</td>
+            <td>{{ despa.productos }}</td>
+           </tr>
+
+        </thead>
+        <tbody>
+
+            <tr>
+                <th scope="col">Peso</th>
+                <th scope="col">Medidas</th>
+                <th scope="col">Fecha Ingreso</th>
+                <th scope="col">Fecha Envio</th>
+                <th scope="col">Estado</th>
+            </tr>
+            <tr>
+            <td>{{ despa.peso }}</td>
+            <td>{{ despa.medidas }}</td>
+            <td>{{ despa.fecha_ingreso }}</td>
+            <td>{{ despa.fecha_envio }}</td>
+            <td>{{ despa.estado }}</td>
+          {% endfor %}
+          {% else %}
+           <h2>No existen registros de despachos...</h2>
+          {% endif %} 
+        </tbody>
+      </table>
+      <br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br>
+      {% include "footer.html" %}
+</body>
+</html>

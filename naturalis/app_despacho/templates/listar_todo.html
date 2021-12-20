@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app_despacho/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'app_despacho/flexboxgrid.min' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>        
+    
+</head>
+<body>
+    {% include "encabezado.html" %}
+    <h2 class="fs-6 "> Para ver mas detalles ingrese a "Buscar Despacho"</h2>
+    <form action="/listar_por_entregar/"><input type="submit" action="" class="btn btn-success " value="Filtrar 'Por Enviar' "></form>
+    <br>
+    <form action="/listar_entregado/">
+    <input type="submit"  class="btn btn-success" value="Filtrar 'Entregado'">
+    </form>
+
+    <form action="/listar_todo/" method="GET">
+        <table class="table">
+            <thead>
+                {% if entity %}
+                {% for despa in entity %}
+              <tr>
+                <th scope="col">Numero Despacho</th>
+                <th scope="col">Nombre Cliente</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Producto</th>
+              </tr>
+              <tr>
+                <th scope="row">{{ despa.numero_despacho  }}</th>
+                <td>{{ despa.nombre_cliente }}</td>
+                <td>{{ despa.direccion }}</td>
+                <td>{{ despa.telefono }}</td>
+                <td>{{ despa.productos }}</td>
+               </tr>
+    
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Medidas</th>
+                    <th scope="col">Fecha Ingreso</th>
+                    <th scope="col">Fecha Envio</th>
+                    <th scope="col">Estado</th>
+                </tr>
+                <tr>
+                <td>{{ despa.peso }}</td>
+                <td>{{ despa.medidas }}</td>
+                <td>{{ despa.fecha_ingreso }}</td>
+                <td>{{ despa.fecha_envio }}</td>
+                <td>{{ despa.estado }}</td>
+            <tr>
+                <td class="table-info"></td>
+                <td class="table-info"></td>
+                <td class="table-info"></td>
+                <td class="table-info"></td>
+                <td class="table-info"></td>
+            </tr>
+            
+                {% endfor %}
+                {% else %}
+                 <h2>No existen registros de despachos...</h2>
+                {% endif %} 
+            </tbody>
+    
+          </table>
+          <div>
+              {% include 'paginator.html' %}
+          </div>
+    
+    </form>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    {% include "footer.html" %}
+
+
+
+
+</body>
+</html>
